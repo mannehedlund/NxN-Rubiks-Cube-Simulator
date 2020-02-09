@@ -1,6 +1,10 @@
 # NxN-Rubiks-Cube-Simulator
 OpenGL implementation of a Rubik's cube of any size with simulated rotations.
 
+See demo below:
+
+![Demo](demo.gif)
+
 ### Usage
 
 Run `make` in the command line to compile. In the same directory, run `./rubiks N` to start the program, where N is the dimension size of the Rubik's cube. There are not enough hotkeys to rotate all slivers of a cube greater than 9x9. However, the program will create a cube of ANY size (although 100x100 will not be processor-friendly).
