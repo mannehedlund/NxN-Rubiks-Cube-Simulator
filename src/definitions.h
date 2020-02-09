@@ -10,9 +10,9 @@
 #define TILE_BORDER_WIDTH 	2.0f
 #define ITERATIONS_PER_ROT	9
 #define SIN_P 			0.17364817766f	// sin(10°)
-#define SIN_N 			-SIN_P			// sin(-10°)
+#define SIN_N 			-SIN_P		// sin(-10°)
 #define COS_P 			0.98480775301f	// cos(10°)
-#define COS_N 			-COS_P			// cos(-10°)
+#define COS_N 			-COS_P		// cos(-10°)
 
 
 typedef enum
