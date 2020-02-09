@@ -3,9 +3,9 @@
 
 void freeArrays()
 {
-	int i;
-	for (i = 0; i < NUM_OF_PIECES; i++)
-		free(rotationMatrix[i]);
+	int index;
+	for (index = 0; index < NUM_OF_PIECES; index++)
+		free(rotationMatrix[index]);
 
 	free(rotationMatrix);
 	free(indices);
