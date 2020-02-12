@@ -156,7 +156,7 @@ void rotateSlightly(int iteration)
 	
 	glutPostRedisplay();
 
-	// Call this functions recursively (on a time) until rotation is complete.
+	// Call this functions recursively (on a timer) until rotation is complete.
 	iteration++;
 	if (iteration == ITERATIONS_PER_ROT)
 		isInRotation = 0;
