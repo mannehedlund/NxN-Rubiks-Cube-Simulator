@@ -45,15 +45,15 @@ int getNewPieceIndex(int index, int dim1, int dim2, Axis axis, Direction rotatio
 	{
 		case X:
 			indexChange = ((dim1 + 1) * (DIM_SIZE - 1))
-							- (dim2 * (DIM_SIZE + 1));
+					- (dim2 * (DIM_SIZE + 1));
 			break;
 		case Y:
 			indexChange = (DIM_SIZE * DIM_SIZE * DIM_SIZE)
-							- ((dim2 + dim1 + 1) * PIECES_PER_SLIVER + (dim1 - dim2));
+					- ((dim2 + dim1 + 1) * PIECES_PER_SLIVER + (dim1 - dim2));
 			break;
 		case Z:
 			indexChange = (dim1 + 1) * (DIM_SIZE * (DIM_SIZE - 1))
-							- dim2 * (DIM_SIZE * (DIM_SIZE + 1));
+					- dim2 * (DIM_SIZE * (DIM_SIZE + 1));
 			break;
 	}
 
@@ -116,30 +116,54 @@ void multiplyRotation(Axis rotationAxis, int layer, Direction rotationDirection)
 		case X:
 			if (rotationDirection == CW)
 				for (i = layer * PIECES_PER_SLIVER; i < (layer + 1) * PIECES_PER_SLIVER; i++)
-					multiplyMatrices(rotationMatrix[indices[i]], X_CW_MATRIX, rotationMatrix[indices[i]]);
+					multiplyMatrices(
+						rotationMatrix[indices[i]],
+						X_CW_MATRIX,
+						rotationMatrix[indices[i]]
+					);
 			else
 				for (i = layer * PIECES_PER_SLIVER; i < (layer + 1) * PIECES_PER_SLIVER; i++)
-					multiplyMatrices(rotationMatrix[indices[i]], X_ACW_MATRIX, rotationMatrix[indices[i]]);
+					multiplyMatrices(
+						rotationMatrix[indices[i]],
+						X_ACW_MATRIX,
+						rotationMatrix[indices[i]]
+					);
 			break;
 		case Y:
 			if (rotationDirection == CW)
 				for (i = layer * DIM_SIZE; i < (layer + 1) * DIM_SIZE; i++)
 					for (j = 0; j < NUM_OF_PIECES; j += PIECES_PER_SLIVER)
-						multiplyMatrices(rotationMatrix[indices[i+j]], Y_CW_MATRIX, rotationMatrix[indices[i+j]]);
+						multiplyMatrices(
+							rotationMatrix[indices[i+j]],
+							Y_CW_MATRIX,
+							rotationMatrix[indices[i+j]]
+						);
 			else
 				for (i = layer * DIM_SIZE; i < (layer + 1) * DIM_SIZE; i++)
 					for (j = 0; j < NUM_OF_PIECES; j += PIECES_PER_SLIVER)
-						multiplyMatrices(rotationMatrix[indices[i+j]], Y_ACW_MATRIX, rotationMatrix[indices[i+j]]);
+						multiplyMatrices(
+							rotationMatrix[indices[i+j]],
+							Y_ACW_MATRIX,
+							rotationMatrix[indices[i+j]]
+						);
 			break;
 		case Z:
 			if (rotationDirection == CW)
 				for (i = layer; i < NUM_OF_PIECES; i += PIECES_PER_SLIVER)
 					for (j = 0; j < PIECES_PER_SLIVER; j += DIM_SIZE)
-						multiplyMatrices(rotationMatrix[indices[i+j]], Z_CW_MATRIX, rotationMatrix[indices[i+j]]);
+						multiplyMatrices(
+							rotationMatrix[indices[i+j]],
+							Z_CW_MATRIX,
+							rotationMatrix[indices[i+j]]
+						);
 			else
 				for (i = layer; i < NUM_OF_PIECES; i += PIECES_PER_SLIVER)
 					for (j = 0; j < PIECES_PER_SLIVER; j += DIM_SIZE)
-						multiplyMatrices(rotationMatrix[indices[i+j]], Z_ACW_MATRIX, rotationMatrix[indices[i+j]]);
+						multiplyMatrices(
+							rotationMatrix[indices[i+j]],
+							Z_ACW_MATRIX,
+							rotationMatrix[indices[i+j]]
+						);
 			break;
 	}
 }
