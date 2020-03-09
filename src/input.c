@@ -22,12 +22,12 @@ void specialKeyDownHandler(int key, int x, int y)
 
 		// Rotate about X-axis, within [-90, 90] angle.
 		case GLUT_KEY_UP:
-            if (xViewRotation <= 75)
-            	xViewRotation += 15;
+			if (xViewRotation <= 75)
+				xViewRotation += 15;
 			break;
 		case GLUT_KEY_DOWN:
-            if (xViewRotation >= -75)
-            	xViewRotation -= 15;
+			if (xViewRotation >= -75)
+				xViewRotation -= 15;
 			break;
 	}
 
