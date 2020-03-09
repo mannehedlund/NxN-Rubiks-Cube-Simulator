@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "header.h"
 
 
 // To record which keys are being held down.
@@ -20,12 +20,14 @@ void specialKeyDownHandler(int key, int x, int y)
 			yViewRotation -= 15;
 			break;
 
-		// Rotate about X-axis.
+		// Rotate about X-axis, within [-90, 90] angle.
 		case GLUT_KEY_UP:
-			xViewRotation += 15;
+            if (xViewRotation <= 75)
+            	xViewRotation += 15;
 			break;
 		case GLUT_KEY_DOWN:
-			xViewRotation -= 15;
+            if (xViewRotation >= -75)
+            	xViewRotation -= 15;
 			break;
 	}
 

@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "header.h"
 
 
 void freeArrays()
