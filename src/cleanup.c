@@ -1,7 +1,7 @@
 #include "header.h"
 
 
-void freeArrays()
+void freeArrays(void)
 {
 	int index;
 	for (index = 0; index < NUM_OF_PIECES; index++)

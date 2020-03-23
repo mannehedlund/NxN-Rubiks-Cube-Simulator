@@ -16,7 +16,7 @@ void initialiseDimSize(int dimSize)
 }
 
 
-void initialiseArrays()
+void initialiseArrays(void)
 {
 	indices = malloc(NUM_OF_PIECES * sizeof(int));
 	rotationMatrix = malloc(NUM_OF_PIECES * sizeof(GLfloat[16]));
@@ -42,7 +42,7 @@ void initialiseArrays()
 }
 
 
-void initialiseGL()
+void initialiseGL(void)
 {
 	// Background color.
 	glClearColor(1.0, 1.0, 1.0, 1.0);

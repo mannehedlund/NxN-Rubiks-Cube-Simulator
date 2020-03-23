@@ -254,7 +254,7 @@ void drawPiece(float x, float y, float z)
 }
 
 
-void drawCube()
+void drawCube(void)
 {
 	int currentPieceIndex = 0;
 

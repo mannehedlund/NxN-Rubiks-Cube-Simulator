@@ -53,13 +53,13 @@ extern GLfloat Z_ACW_MATRIX[16];
 
 // initialise.c
 void initialiseDimSize(int dimSize);
-void initialiseArrays();
-void initialiseGL();
+void initialiseArrays(void);
+void initialiseGL(void);
 void initialiseGLUT(int argc, char **argv);
 void initialiseMatrix(GLfloat *matrix);
 
 // cleanup.c
-void freeArrays();
+void freeArrays(void);
 
 // display.c
 void display(void);
@@ -69,7 +69,7 @@ void reshape(int width, int height);
 void multiplyMatrices(GLfloat *result, GLfloat *matrix1, GLfloat *matrix2);
 
 // cube.c
-void drawCube();
+void drawCube(void);
 
 // rotation.c
 void performRotation(Axis rotationAxis, int layer, Direction rotationDirection);
